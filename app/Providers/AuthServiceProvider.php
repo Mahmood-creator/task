@@ -15,8 +15,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        'App\Models\Model' => 'App\Policies\ModelPolicy',
-        Company::class => CompanyPolicy::class
+        // 'App\Models\Model' => 'App\Policies\ModelPolicy',
     ];
 
     /**
@@ -42,12 +41,5 @@ class AuthServiceProvider extends ServiceProvider
             return false;
         });
 
-
-        // Gate::define('company-update', function($user, \App\Models\Company $company){
-        //     if($user->id == $company->user_id){
-        //         return true;
-        //     }
-        //     return false;
-        // });
     }
 }

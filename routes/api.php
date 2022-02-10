@@ -25,14 +25,14 @@ Route::group(['prefix' => 'auth'], function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'can:admin'], function () {
     Route::apiResource('company', CompanyController::class);
-    Route::get('worker/{worker}', [WorkerController::class, 'show']);
+    Route::get('/{worker}', [WorkerController::class, 'show']);
     Route::get('worker', [WorkerController::class, 'index'])->name('worker.index');
 });
 
 
 Route::group(['prefix' => 'company', 'middleware' => 'can:company'], function () {
     Route::apiResource('worker', WorkerController::class);
-    Route::put('company/{id}', [CompanyController::class, 'update'])->name('company.update');
+    Route::put('/{company}', [CompanyController::class, 'update'])->name('company.update');
 });
 
 
